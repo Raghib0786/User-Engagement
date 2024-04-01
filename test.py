@@ -159,6 +159,7 @@ fig = px.bar(role_segmentation_df, x='Role', y='Count', title="Role Segmentation
 st.plotly_chart(fig)
 
 
+
 ahoy_events['time'] = pd.to_datetime(ahoy_events['time'], format='%Y-%m-%d %H:%M:%S', errors='coerce')
 ahoy_events['hour'] = ahoy_events['time'].dt.hour
 ahoy_events['day_of_week'] = ahoy_events['time'].dt.dayofweek
@@ -168,3 +169,5 @@ fig = px.line(events_by_hour, x='hour', y='counts', markers=True, title='User En
 fig.update_layout(xaxis=dict(tickmode='linear', tick0=0, dtick=1), xaxis_title='Hour of Day', yaxis_title='Number of Events')
 st.title('User Engagement Analysis')
 st.plotly_chart(fig)
+
+
